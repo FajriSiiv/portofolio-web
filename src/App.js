@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import YourName from "./components/YourName";
+import About from "./components/About";
+import Project from "./components/Project";
+
+const Container = styled.div`
+  max-width: 1440px;
+  position: relative;
+  margin: auto;
+  background: #0d1321;
+  color: white;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <YourName />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/project">
+            <Project />
+          </Route>
+        </Switch>
+      </Container>
+    </Router>
   );
 }
 
