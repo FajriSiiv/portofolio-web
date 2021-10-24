@@ -1,50 +1,99 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { data } from "../data";
+import breakpoints from "../breakpoints";
 
 const Container = styled.div`
-  height: 120vh;
+  min-height: 100vh;
   padding: 100px 70px;
+  @media only screen and ${breakpoints.device.xs} {
+    padding: 60px 20px;
+  }
 `;
 const Text = styled.h1`
   font-size: 50px;
   text-align: center;
+  @media only screen and ${breakpoints.device.xs} {
+    font-size: 30px;
+    text-align: left;
+  }
+`;
+
+const Title = styled.span`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 300%);
+  z-index: 10;
+  background: #e5383b;
+  padding: 5px 10px;
+  border: 2px solid white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.3s all ease;
+  font-weight: 700;
+  @media only screen and ${breakpoints.device.xs} {
+    font-size: 13px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -250%);
+  }
+`;
+const Image = styled.img`
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 100%;
 `;
 
 const DisplayProject = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `;
+
 const DivProject = styled.div`
   flex: 1;
   min-width: 300px;
+  max-width: 500px;
   height: 250px;
   position: relative;
   overflow: hidden;
   margin: 5px;
+  &:hover ${Title} {
+    color: #e5383b;
+    background: white;
+    border: 2px solid #e5383b;
+  }
+  @media only screen and ${breakpoints.device.xs} {
+    min-width: 250px;
+    height: 150px;
+  }
 `;
 
-const Title = styled.span`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  background: black;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+const ButtonFill = styled.button`
+  padding: 7px 15px;
+  margin: 5px 3px;
+  color: white;
+  background: #e5383b;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  font-weight: 600;
+  &:hover {
+    background: white;
+    border: 2px solid #e5383b;
+    color: #e5383b;
+  }
 `;
-const Image = styled.img`
-  object-fit: cover;
+
+const Linka = styled.a`
+  position: relative;
   width: 100%;
   height: 100%;
+  color: white;
 `;
-
-const ButtonFill = styled.button``;
 
 export default function Project() {
   const [ImFound, setImFound] = useState([]);
@@ -62,6 +111,7 @@ export default function Project() {
     let filterMob = data.filter(e => e.title);
     setImFound(filterMob);
   };
+
   return (
     <Container>
       <Text>My Project</Text>
@@ -72,21 +122,13 @@ export default function Project() {
       <DisplayProject>
         {ImFound.map(projects => (
           <DivProject key={projects.id}>
-            <Title>{projects.title}</Title>
-            <Image src={projects.img} />
+            <Linka href={projects.url} target="_blank">
+              <Title>{projects.title}</Title>
+              <Image src={projects.img} />
+            </Linka>
           </DivProject>
         ))}
-        {/* {data.map(projects => (
-          <DivProject key={projects.id}>
-            <Title>{projects.title}</Title>
-            <Image src={projects.img} />
-          </DivProject>
-        ))} */}
       </DisplayProject>
     </Container>
   );
-
-  function newFunction(e) {
-    console.log(e.target.innerHTML);
-  }
 }

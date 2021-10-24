@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import breakpoints from "../breakpoints";
 
 const Container = styled.div`
   width: 100%;
@@ -11,21 +12,35 @@ const Container = styled.div`
   align-items: center;
   position: fixed;
   z-index: 99;
+
+  @media only screen and ${breakpoints.device.xs} {
+    height: 60px;
+    width: fit-content;
+  }
 `;
 
 const Center = styled.div`
   display: flex;
   justify-content: space-between;
   width: 30%;
+  @media only screen and ${breakpoints.device.xs} {
+    width: 100vw;
+    padding: 5px 10px;
+    justify-content: center;
+  }
 `;
 
-const Linked = styled.a`
+const Linked = styled.span`
   color: white;
   font-size: 20px;
   text-transform: uppercase;
   transition: 0.3s all ease;
   &:hover {
     color: #a4161a;
+  }
+  @media only screen and ${breakpoints.device.xs} {
+    font-size: 14px;
+    margin: 0 10px;
   }
 `;
 
