@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { data } from "../data";
-import breakpoints from "../breakpoints";
 
 const Container = styled.div`
   min-height: 100vh;
   padding: 100px 70px;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     padding: 60px 20px;
   }
 `;
 const Text = styled.h1`
   font-size: 50px;
   text-align: center;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 30px;
     text-align: left;
   }
@@ -31,7 +30,7 @@ const Title = styled.span`
   letter-spacing: 0.5px;
   transition: 0.3s all ease;
   font-weight: 700;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 13px;
     left: 50%;
     top: 50%;
@@ -66,7 +65,7 @@ const DivProject = styled.div`
     background: white;
     border: 2px solid #e5383b;
   }
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     min-width: 250px;
     height: 150px;
   }

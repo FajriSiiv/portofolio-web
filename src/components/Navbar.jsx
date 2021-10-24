@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import breakpoints from "../breakpoints";
 
 const Container = styled.div`
+  max-width: 1440px;
   width: 100%;
   height: 70px;
   background: #0d1321;
@@ -13,7 +13,7 @@ const Container = styled.div`
   position: fixed;
   z-index: 99;
 
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     height: 60px;
     width: fit-content;
   }
@@ -23,7 +23,7 @@ const Center = styled.div`
   display: flex;
   justify-content: space-between;
   width: 30%;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     width: 100vw;
     padding: 5px 10px;
     justify-content: center;
@@ -38,7 +38,7 @@ const Linked = styled.span`
   &:hover {
     color: #a4161a;
   }
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 14px;
     margin: 0 10px;
   }

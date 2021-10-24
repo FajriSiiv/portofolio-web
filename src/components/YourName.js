@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import breakpoints from "../breakpoints";
 
 const Container = styled.div`
   width: 100%;
@@ -11,7 +10,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   color: white;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     padding: 0 10px;
   }
 `;
@@ -21,7 +20,7 @@ const TextMain = styled.h1`
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #e5383b 30%);
   line-height: 70px;
   position: relative;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 23px;
     line-height: normal;
   }
@@ -40,7 +39,7 @@ const TextDev = styled.span`
   margin-bottom: 20px;
   font-family: "Titillium Web";
   font-weight: 700;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 13px;
   }
 `;

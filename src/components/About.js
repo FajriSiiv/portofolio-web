@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaBootstrap } from "react-icons/fa";
-import breakpoints from "../breakpoints";
 
 const Container = styled.div`
   height: 100vh;
@@ -10,7 +9,7 @@ const Container = styled.div`
   align-items: flex-start;
   flex-direction: column;
 
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     padding: 60px 10px;
     overflow: hidden;
     display: flex;
@@ -21,14 +20,14 @@ const Container = styled.div`
 const Top = styled.div``;
 const Text = styled.h1`
   font-size: 100px;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 30px;
   }
 `;
 const TextMob = styled.h3`
   font-size: 30px;
   font-weight: 400;
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     font-size: 20px;
     word-break: break-all;
   }
@@ -54,7 +53,7 @@ const DisplayIcon = styled.div`
     font-size: 50px;
     fill: ${props => props.color};
   }
-  @media only screen and ${breakpoints.device.xs} {
+  @media only screen and (max-width: 576px) {
     height: 70px;
     width: 70px;
     padding: 8px;
