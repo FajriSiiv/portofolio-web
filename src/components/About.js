@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaHtml5, FaCss3, FaJs, FaReact, FaBootstrap } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaBootstrap, FaFigma } from "react-icons/fa";
 
 const Container = styled.div`
   height: 100vh;
@@ -97,6 +97,10 @@ const About = () => {
 
           <DisplayIcon>
             <FaReact color="#0466c8" />
+          </DisplayIcon>
+
+          <DisplayIcon>
+            <FaFigma color="#ee6c4d" />
           </DisplayIcon>
         </DisplaySkills>
       </Top>
