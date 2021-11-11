@@ -37,19 +37,13 @@ const Title = styled.span`
     transform: translate(-50%, -250%);
   }
 `;
+
 const Image = styled.img`
   object-fit: cover;
   object-position: top;
   width: 100%;
   height: 100%;
-`;
-
-const DisplayProject = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
+  transition: all 0.2s ease-in;
 `;
 
 const DivProject = styled.div`
@@ -60,15 +54,28 @@ const DivProject = styled.div`
   position: relative;
   overflow: hidden;
   margin: 5px;
+  border-radius: 5px;
+
   &:hover ${Title} {
     color: #e5383b;
     background: white;
     border: 2px solid #e5383b;
   }
+  &:hover ${Image} {
+    transform: scale(1.1);
+  }
   @media only screen and (max-width: 576px) {
     min-width: 250px;
     height: 150px;
   }
+`;
+
+const DisplayProject = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const ButtonFill = styled.button`
@@ -115,8 +122,8 @@ export default function Project() {
     <Container>
       <Text>My Project</Text>
       <ButtonFill onClick={handleClickAll}>All</ButtonFill>
-      <ButtonFill onClick={handleClick}>Shop</ButtonFill>
-      <ButtonFill onClick={handleClick}>Landing Page</ButtonFill>
+      <ButtonFill onClick={handleClick}>HTML5</ButtonFill>
+      <ButtonFill onClick={handleClick}>React</ButtonFill>
 
       <DisplayProject>
         {ImFound.map(projects => (
